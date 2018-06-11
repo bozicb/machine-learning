@@ -16,16 +16,13 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCostMulti) and gradient here.
     %
-
-
-
-
-
-
-
-
-
-
+	temp=[]
+	for v=1:size(X,2)
+		temp=[temp,theta(v,:)-alpha*((X*theta-y)'*X(:,v))/m];
+	end
+	for v=1:size(X,2)
+		theta(v,:)=temp(v);
+	end
 
     % ============================================================
 
